@@ -1,10 +1,10 @@
 input.onButtonPressed(Button.A, function () {
     Logging = true
-    radio.sendValue("Meditating", 0)
+    radio.sendValue("Meditating", 1)
 })
 input.onButtonPressed(Button.B, function () {
     Logging = false
-    radio.sendValue("Meditating", 1)
+    radio.sendValue("Meditating", 0)
 })
 let Temp = ""
 let LightLevel = ""
