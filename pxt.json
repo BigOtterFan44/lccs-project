@@ -4,12 +4,17 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "microbit-pxt-timeanddate": "github:bsiever/microbit-pxt-timeanddate#v2.0.33",
+        "DS1302": "github:makecode-extensions/ds1302#v1.1.0",
+        "ds1307": "github:tinkertanker/pxt-realtimeclock-ds1307#cac7e9e8edf290e6f12cb3920f014c20d39feb58",
+        "pxt-DS3231": "github:keble6/pxt-ds3231#v1.0.2"
     },
     "files": [
         "main.blocks",
         "main.ts",
-        "README.md"
+        "README.md",
+        "main.py"
     ],
     "testFiles": [
         "test.ts"

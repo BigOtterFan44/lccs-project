@@ -1,10 +1,10 @@
 input.onButtonPressed(Button.A, function () {
     Logging = true
-    radio.sendValue("Meditating", 1)
+    radio.sendNumber(1)
 })
 input.onButtonPressed(Button.B, function () {
     Logging = false
-    radio.sendValue("Meditating", 0)
+    radio.sendNumber(0)
 })
 let Temp = ""
 let LightLevel = ""
@@ -34,8 +34,13 @@ loops.everyInterval(100, function () {
         } else if (input.temperature() < 0) {
             Temp = "000"
         }
+        if (input.lightLevel() >= 100) {
+            LightLevel = convertToText(input.lightLevel())
+        } else if (input.lightLevel() >= 10) {
+            LightLevel = "0" + convertToText(input.lightLevel())
+        } else if (input.lightLevel() >= 0 && input.lightLevel() < 10) {
+            LightLevel = "00" + convertToText(input.lightLevel())
+        }
         radio.sendString("" + LightLevel + SoundLevel + Temp)
-    } else {
-    	
     }
 })
